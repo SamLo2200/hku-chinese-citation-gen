@@ -43,16 +43,14 @@ function formHandler(event: FormEvent<HTMLFormElement>) {
 
     generateRef(data);
 
-    console.log(JSON.stringify(data));
+    // console.log(JSON.stringify(data));
 }
 
 function generateRef(data: citationInfo) {
     const today = new Date();
-    let genResult = `${data.author}：〈${data.articleName}〉，《${data.newspaperName}》，${
-        data.releaseYear
-    }年${data.releaseMonth}月${data.releaseDay}日。取自${
-        data.newsUrl
-    }，${today.getDate()}-${today.getMonth()}-${today.getFullYear()}擷取。`;
+
+    // prettier-ignore
+    let genResult = `${data.author}：〈${data.articleName}〉，《${data.newspaperName}》，${data.releaseYear}年${data.releaseMonth}月${data.releaseDay}日。取自${data.newsUrl}，${today.getDate()}-${today.getMonth()}-${today.getFullYear()}擷取。`;
 
     navigator.clipboard.writeText(genResult);
 }
