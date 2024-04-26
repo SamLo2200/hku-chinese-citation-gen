@@ -30,7 +30,8 @@ function formHandler(event: FormEvent<HTMLFormElement>) {
     const formData = new FormData(event.currentTarget);
 
     const data: citationInfo = {
-        author: formData.get("author") === "" ? "佚名" : (formData.get("author") as string),
+        // prettier-ignore
+        author: formData.get("author") === "" ? "作者不詳" : (formData.get("author") as string),
         articleName: formData.get("aricle-name") as string,
         newspaperName: formData.get("newspaper-name") as string,
 
